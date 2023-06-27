@@ -10,7 +10,7 @@ const Register = ()=> {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+    const { isAuthenticated, setIsAuthenticated, loading, setLoading  } = useContext(Context);
 
     const submitHandler = async (e) => {
         setLoading(true);

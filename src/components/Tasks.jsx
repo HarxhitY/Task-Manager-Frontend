@@ -1,6 +1,7 @@
 import React from "react";
 
 const Tasks = ({title, description, isCompleted, updateHandler, deleteHandler, id,}) => {
+    
   return (
     <div className="todo">
       <div>
@@ -9,9 +10,7 @@ const Tasks = ({title, description, isCompleted, updateHandler, deleteHandler, i
       </div>
       <div>
         <input onChange={() => updateHandler(id)} type="checkbox" checked={isCompleted} />
-        <button onClick={() => deleteHandler(id)} className="btn">
-          Delete
-        </button>
+        <button onClick={() => deleteHandler(id)} className="btn">Delete</button>
       </div>
     </div>
   );

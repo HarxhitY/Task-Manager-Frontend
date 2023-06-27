@@ -48,11 +48,7 @@ const Home = () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        `${server}/task/new`,
-        {
-          title,
-          description,
-        },
+        `${server}/task/new`,{ title, description,},
         {
           withCredentials: true,
           headers: {
@@ -73,14 +69,11 @@ const Home = () => {
   };
 
   useEffect(() => {
-    axios
-      .get(`${server}/task/my`, {
+    axios.get(`${server}/task/my`, {
         withCredentials: true,
-      })
-      .then((res) => {
+      }).then((res) => {
         setTasks(res.data.tasks);
-      })
-      .catch((e) => {
+      }).catch((e) => {
         toast.error(e.response.data.message);
       });
   }, [refresh]);

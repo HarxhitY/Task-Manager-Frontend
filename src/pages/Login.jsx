@@ -1,8 +1,8 @@
-import axios from "axios";
 import React, { useContext, useState } from "react";
+import axios from "axios";
+import { Context, server } from "../main";
 import { toast } from "react-hot-toast";
 import { Link, Navigate } from "react-router-dom";
-import { Context, server } from "../main";
 
 const Login = () => {
   const { isAuthenticated, setIsAuthenticated, loading, setLoading } = useContext(Context);
@@ -15,11 +15,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        `${server}/users/login`,
-        {
-          email,
-          password,
-        },
+        `${server}/users/login`,{ email, password, },
         {
           headers: {
             "Content-Type": "application/json",
